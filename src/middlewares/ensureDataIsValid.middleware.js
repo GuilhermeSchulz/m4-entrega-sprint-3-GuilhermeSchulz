@@ -1,8 +1,8 @@
 export const ensureDataIsValidMiddleware = (schema) => async (request, response, next) => {
     try {
         const validated = await schema.validate(request.body, {
-            // stripUnknown: true,
-            // abortEarly: false
+            stripUnknown: true,
+            abortEarly: false
         })
 
         request.validatedBody = validated

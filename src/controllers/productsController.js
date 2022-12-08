@@ -21,7 +21,7 @@ export const getSpecificProduct = async (req, resp) => {
 }
 export const patchProductController = async (req, resp) => {
     const id = req.params.id
-    const [status, products] = await editProduct(id, req.validatedBody)
+    const [status, products] = await editProduct(id, req.body)
     return resp.status(status).json(products)
 }
 export const deleteCategoryController = async(req, resp) => {
